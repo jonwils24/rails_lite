@@ -4,7 +4,8 @@ module Phase2
 
     # Setup the controller
     def initialize(req, res)
-      @req, @res = req, res
+      @req = req
+      @res = res
       @already_built_response = false
     end
 
@@ -15,13 +16,12 @@ module Phase2
 
     # Set the response status code and header
     def redirect_to(url)
-      raise "double render error" if already_built_response?
-
+      raise "Double render error" if already_built_response?
+      
       @res.status = 302
       @res["Location"] = url
-
+      
       @already_built_response = true
-
       nil
     end
 
@@ -29,11 +29,11 @@ module Phase2
     # Set the response's content type to the given type.
     # Raise an error if the developer tries to double render.
     def render_content(content, type)
-      raise "double render error" if already_built_response?
-
+      raise "Double render error" if already_built_response?
+      
       @res.body = content
       @res.content_type = type
-
+      
       @already_built_response = true
       nil
     end

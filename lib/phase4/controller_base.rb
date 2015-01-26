@@ -6,14 +6,14 @@ module Phase4
     def redirect_to(url)
       super(url)
       session.store_session(@res)
-
+      
       nil
     end
 
     def render_content(content, type)
       super(content, type)
       session.store_session(@res)
-
+      
       nil
     end
 

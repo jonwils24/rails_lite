@@ -1,10 +1,6 @@
-# Using The Specs
+Lite version of Rails
 
-Some specs have been written to guide you towards the lite. There are
-rspec specs in the `spec` directory and demo servers for you to try
-in the `bin` directory.
-
-## Suggested Order
+## Instructions for running specs
 
 0.  `bundle exec rspec spec/p02_controller_spec.rb`
 0.  `bundle exec rspec spec/p03_template_spec.rb`
